@@ -1,3 +1,9 @@
+from flask import Flask, render_template_string, request
+import random
+
+app = Flask(__name__)
+
+html_code = """
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,4 +137,77 @@ canvas.addEventListener("click", function(event){
 </script>
 
 </body>
-</html>
+</html>"""
+def quantum_inspired_rl(start, goal, obstacles, size):
+    actions = [(-1,0),(0,1),(1,0),(0,-1)]
+
+    def valid(pos):
+        r,c = pos
+        return 0 <= r < size and 0 <= c < size and pos not in obstacles
+
+    from collections import deque
+    queue = deque([start])
+    parent = {start: None}
+
+    while queue:
+        current = queue.popleft()
+        if current == goal:
+            break
+
+        random.shuffle(actions)
+
+        for a in actions:
+            nxt = (current[0]+a[0], current[1]+a[1])
+            if valid(nxt) and nxt not in parent:
+                parent[nxt] = current
+                queue.append(nxt)
+
+    if goal not in parent:
+        return [start]
+
+    path = []
+    cur = goal
+    while cur is not None:
+        path.append(cur)
+        cur = parent[cur]
+
+    return path[::-1]
+
+
+@app.route("/")
+def home():
+    return render_template_string(html_code)
+
+
+@app.route("/run")
+def run():
+    try:
+        size = int(request.args.get("size"))
+        start = tuple(map(int, request.args.get("start").split(",")))
+        goal = tuple(map(int, request.args.get("goal").split(",")))
+
+        obs_text = request.args.get("obs", "").strip()
+        obstacles = set(tuple(map(int, o.split(","))) for o in obs_text.split(";") if o)
+
+        path = quantum_inspired_rl(start, goal, obstacles, size)
+
+        return {
+            "gridSize": size,
+            "start": start,
+            "goal": goal,
+            "obstacles": list(obstacles),
+            "path": path
+        }
+
+    except Exception as e:
+        return {
+            "gridSize": 5,
+            "start": (0, 0),
+            "goal": (4, 4),
+            "obstacles": [],
+            "path": [(0, 0)]
+        }
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
