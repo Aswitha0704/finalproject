@@ -1,0 +1,988 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:10.5pt;
+	font-family:"Cambria",serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:10.5pt;
+	font-family:"Cambria",serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:10.5pt;
+	font-family:"Cambria",serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:10.5pt;
+	font-family:"Cambria",serif;}
+.MsoChpDefault
+	{font-size:10.5pt;
+	font-family:"Cambria",serif;}
+@page WordSection1
+	{size:596.0pt 843.0pt;
+	margin:50.0pt 35.4pt 56.0pt 42.5pt;
+	border:solid black 1.0pt;
+	padding:24.0pt 23.0pt 23.0pt 24.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+@page WordSection2
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection2
+	{page:WordSection2;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-IN style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>from flask import Flask,
+render_template_string, request</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>import numpy as np</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>import random</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>import webbrowser</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>import threading</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>app = Flask(__name__)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>html_code = &quot;&quot;&quot;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;!DOCTYPE html&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;html&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;head&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;title&gt;Quantum RL Robot Path
+Planning&lt;/title&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;style&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>body { font-family: Arial;
+text-align:center; background:#FAFAFA; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>canvas { border:2px solid #333;
+margin-top:10px; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>input, button { margin:5px;
+padding:4px; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;/style&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;/head&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;body&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;h2&gt;Path Planning for
+Autonomous Robots Using Quantum RL&lt;/h2&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;form id=&quot;inputForm&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>Grid Size: &lt;input
+name=&quot;size&quot; value=&quot;6&quot; min=&quot;2&quot;&gt;&lt;br&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>Start (row,col): &lt;input
+name=&quot;start&quot; value=&quot;0,0&quot;&gt;&lt;br&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>Goal (row,col): &lt;input
+name=&quot;goal&quot; value=&quot;5,5&quot;&gt;&lt;br&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;button
+type=&quot;submit&quot;&gt;Run Simulation&lt;/button&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;button type=&quot;button&quot;
+id=&quot;resetBtn&quot;&gt;Reset Obstacles&lt;/button&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;/form&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;canvas
+id=&quot;gridCanvas&quot;&gt;&lt;/canvas&gt;</span></p>
+
+</div>
+
+<span style='font-size:11.5pt;font-family:"Cambria",serif'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=WordSection2>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;script&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>const canvas =
+document.getElementById(&quot;gridCanvas&quot;);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>const ctx =
+canvas.getContext(&quot;2d&quot;);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>const cellSize = 50;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>let obstacles = [];</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>function drawGrid(gridSize,
+obstacles, start, goal, path, step){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; canvas.width = gridSize
+* cellSize;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; canvas.height =
+gridSize * cellSize;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; ctx.clearRect(0, 0,
+canvas.width, canvas.height);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; // Grid</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; for(let r = 0; r &lt;
+gridSize; r++){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; for(let c
+= 0; c &lt; gridSize; c++){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; ctx.strokeStyle = &quot;#90A4AE&quot;;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; ctx.strokeRect(c * cellSize, r * cellSize, cellSize, cellSize);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; // Obstacles</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; ctx.fillStyle =
+&quot;#263238&quot;;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; obstacles.forEach(o
+=&gt; ctx.fillRect(o[1] * cellSize, o[0] * cellSize, cellSize, cellSize));</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; // Start</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; ctx.fillStyle =
+&quot;#2ECC71&quot;;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; ctx.fillRect(start[1] *
+cellSize, start[0] * cellSize, cellSize, cellSize);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; // Goal</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; ctx.fillStyle =
+&quot;#E74C3C&quot;;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; ctx.fillRect(goal[1] *
+cellSize, goal[0] * cellSize, cellSize, cellSize);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; // Path &amp; Robot</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; if (path &amp;&amp;
+step &gt;= 0){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+ctx.strokeStyle = &quot;#1E88E5&quot;;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+ctx.lineWidth = 3;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+ctx.beginPath();</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; for (let
+i = 0; i &lt;= step; i++){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; let r = path[i][0], c = path[i][1];</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; let x = c * cellSize + cellSize / 2;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; let y = r * cellSize + cellSize / 2;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+ctx.stroke();</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; let rr =
+path[step][0], cc = path[step][1];</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+ctx.fillStyle = &quot;#1565C0&quot;;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+ctx.beginPath();</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+ctx.arc(cc * cellSize + cellSize / 2, rr * cellSize + cellSize / 2, cellSize /
+4, 0, Math.PI * 2);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+ctx.fill();</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>}</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>function animatePath(gridSize,
+obstacles, start, goal, path){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; let step = 0;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; drawGrid(gridSize,
+obstacles, start, goal, path, step);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; let timer =
+setInterval(() =&gt; {</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; if (step
+&lt; path.length - 1){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; step++;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; drawGrid(gridSize, obstacles, start, goal, path, step);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; } else { </span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; clearInterval(timer); </span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; }, 400);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>}</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>document.getElementById(&quot;inputForm&quot;).addEventListener(&quot;submit&quot;,
+function(e){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; e.preventDefault();</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const size =
+this.size.value;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const start =
+this.start.value;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const goal =
+this.goal.value;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp;
+fetch(`/run?size=${size}&amp;start=${start}&amp;goal=${goal}&amp;obs=${obstacles.map(o
+=&gt; o.join(&quot;,&quot;)).join(&quot;;&quot;)}`)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; .then(res =&gt;
+res.json())</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>.then(data =&gt; {</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; if
+(data.path.length &lt;= 1){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; alert(&quot;No valid path found!&quot;);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; } else {</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; animatePath(data.gridSize, data.obstacles, data.start, data.goal,
+data.path);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; });</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>});</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>document.getElementById(&quot;resetBtn&quot;).addEventListener(&quot;click&quot;,
+function(){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; obstacles = [];</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp;
+drawGrid(Number(document.querySelector('input[name=&quot;size&quot;]').value),
+[], [0,0], [5,5], [], -1);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>});</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>canvas.addEventListener(&quot;click&quot;,
+function(event){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const gridSize =
+Number(document.querySelector('input[name=&quot;size&quot;]').value);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const rect =
+canvas.getBoundingClientRect();</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const x = event.clientX
+- rect.left;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const y = event.clientY
+- rect.top;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const row =
+Math.floor(y / cellSize);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const col = Math.floor(x
+/ cellSize);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; const index =
+obstacles.findIndex(o =&gt; o[0] === row &amp;&amp; o[1] === col);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; if (index === -1
+&amp;&amp; row &gt;= 0 &amp;&amp; col &gt;= 0 &amp;&amp; row &lt; gridSize
+&amp;&amp; col &lt; gridSize){</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+obstacles.push([row, col]);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; } else {</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; obstacles.splice(index,
+1); // Remove obstacle if already present</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; }</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; drawGrid(gridSize,
+obstacles, [0, 0], [gridSize - 1, gridSize - 1], [], -1);</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>});</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;/script&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;/body&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&lt;/html&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&quot;&quot;&quot;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>def quantum_inspired_rl(start, goal,
+obstacles, size):</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; actions = [(-1, 0), (0,
+1), (1, 0), (0, -1)]</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; </span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; def valid(pos):</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; r, c =
+pos</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; return 0
+&lt;= r &lt; size and 0 &lt;= c &lt; size and pos not in obstacles</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; from collections import
+deque</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; queue = deque([start])</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; parent = {start: None}</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; while queue:</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; current =
+queue.popleft()</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; if
+current == goal:</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; break</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+random.shuffle(actions) &nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; for a in
+actions:</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; nxt = (current[0] + a[0], current[1] + a[1])</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; if valid(nxt) and nxt not in parent:</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; parent[nxt] = current</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; queue.append(nxt)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; if goal not in parent:</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; return
+[start] &nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; path = []</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; cur = goal</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; while cur is not None:</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp;
+path.append(cur)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; cur =
+parent[cur]</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; path.reverse()</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; return path</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>@app.route(&quot;/&quot;)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>def home():</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>return
+render_template_string(html_code)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>@app.route(&quot;/run&quot;)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>def run():</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; try:</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; size =
+int(request.args.get(&quot;size&quot;))</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; start =
+tuple(map(int, request.args.get(&quot;start&quot;).split(&quot;,&quot;)))</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; goal =
+tuple(map(int, request.args.get(&quot;goal&quot;).split(&quot;,&quot;)))</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; obs_text
+= request.args.get(&quot;obs&quot;, &quot;&quot;).strip()</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; obstacles
+= set(tuple(map(int, o.split(&quot;,&quot;))) for o in
+obs_text.split(&quot;;&quot;) if o)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; path =
+quantum_inspired_rl(start, goal, obstacles, size)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; return
+{&quot;gridSize&quot;: size, &quot;start&quot;: start, &quot;goal&quot;: goal,
+&quot;obstacles&quot;: list(obstacles), &quot;path&quot;: path}</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; except:</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; &nbsp; &nbsp; return
+{&quot;gridSize&quot;: 5, &quot;start&quot;: (0, 0), &quot;goal&quot;: (4, 4),
+&quot;obstacles&quot;: [], &quot;path&quot;: [(0, 0)]}</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>def open_browser():</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp;
+webbrowser.open(&quot;http://127.0.0.1:5000/&quot;)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>if __name__ == &quot;__main__&quot;:</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; threading.Timer(1.0,
+open_browser).start()</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.8pt;
+margin-left:22.9pt;text-indent:-.5pt;line-height:103%'><span lang=EN-US
+style='font-size:12.0pt;line-height:103%'>&nbsp; &nbsp; app.run(debug=True)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
